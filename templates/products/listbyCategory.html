@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos por categoria</title>
+</head>
+<body>
+<h1>Listar por Categoria</h1> 
+<form method="get"> {% csrf_token %}
+    <input type="text" id="catPK" name="catPK" placeholder="Ingrese el id de categoría">
+    <button type="submit">Buscar</button>
+    
+</form>
+<ul>
+    {% for pd in product_list_category %}
+        <li>  {{ pd }} </li>
+    {% endfor %}
+    
+</ul>
+
+
+</body>
+</html>
